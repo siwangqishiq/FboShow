@@ -93,10 +93,10 @@ public final class EsUtils {
     }
 
     public static void debugPrintMat(float[] m) {
-        System.out.println(m[0] + " " +m[1] +" " + m[2] +" " + m[3]);
-        System.out.println(m[4] + " " +m[5] +" " + m[6] +" " + m[7]);
-        System.out.println(m[8] + " " +m[9] +" " + m[10] +" " + m[11]);
-        System.out.println(m[12] + " " +m[13] +" " + m[14] +" " + m[15]);
+        System.out.println(m[0] + " " + m[1] + " " + m[2] + " " + m[3]);
+        System.out.println(m[4] + " " + m[5] + " " + m[6] + " " + m[7]);
+        System.out.println(m[8] + " " + m[9] + " " + m[10] + " " + m[11]);
+        System.out.println(m[12] + " " + m[13] + " " + m[14] + " " + m[15]);
     }
 
 
@@ -229,10 +229,10 @@ public final class EsUtils {
         return textureIds[0];
     }
 
-    public static int buildShaderProgram(int vertexShaderCodeId, int fragShaderCodeId) {
+    public static int buildShaderProgram(Context context, int vertexShaderCodeId, int fragShaderCodeId) {
         return buildShaderProgram(
-                readTextFileFromRaw(null, vertexShaderCodeId),
-                readTextFileFromRaw(null, fragShaderCodeId));
+                readTextFileFromRaw(context, vertexShaderCodeId),
+                readTextFileFromRaw(context, fragShaderCodeId));
     }
 
     /**
@@ -297,7 +297,6 @@ public final class EsUtils {
      * @param context
      * @param resourceId
      * @return
-     *
      */
     public static String readTextFileFromRaw(Context context, int resourceId) {
         StringBuilder body = new StringBuilder();
